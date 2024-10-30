@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 import React from 'react';
 import { Play, Square } from 'lucide-react';
@@ -7,7 +6,7 @@ import { CardData } from '../interfaces/cardData';
 
 interface CardProps extends Omit<CardData, 'id'> {}
 
-const News: React.FC<CardProps> = ({ image, title, time, isVideo, tag }) => (
+const News: React.FC<CardProps> = ({  title, time, isVideo, tag }) => (
   <div className="relative flex flex-col bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-sm">
     <div className="relative h-52">
       <img 
