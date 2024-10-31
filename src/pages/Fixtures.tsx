@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import barcelonaLogo from '../assets/images/barcelon.png';
 import realmadridLogo from '../assets/images/realmadrid.png';
 import atleticoLogo from '../assets/images/mancity.png';
-import StandingsTable from '../components/standingsTable';
+import StandingsTable from '../components/StandingsTable';
 import ResultsCard from '../components/ResultsCard';
 
 interface Fixture {
