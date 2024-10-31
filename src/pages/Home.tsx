@@ -11,6 +11,7 @@ import MatchCountdown from "../components/MatchCountdown";
 import StoreSection from "../components/StoreSection";
 import NewsSection from "../components/NewsSection";
 import PlayersCarousel from "../components/PlayerCarousel";
+import PartnersSection from "../components/PartnerSection";
 
 const Home: React.FC = () => {
     // Card data array
@@ -104,6 +105,7 @@ const Home: React.FC = () => {
         <StoreSection/>
         <NewsSection/>
         <PlayersCarousel/>
+        <PartnersSection/>
       </div>
     );
   };
