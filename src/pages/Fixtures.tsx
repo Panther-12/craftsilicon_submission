@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import barcelonaLogo from '../assets/images/barcelon.png';
 import realmadridLogo from '../assets/images/realmadrid.png';
+import atleticoLogo from '../assets/images/mancity.png';
 import StandingsTable from '../components/standingsTable';
+import ResultsCard from '../components/ResultsCard';
 
 interface Fixture {
   date: string;
@@ -11,6 +13,45 @@ interface Fixture {
   homeTeam: string;
   awayTeam: string;
 }
+
+// Define the structure for the ResultsCard data
+interface ResultsData {
+    homeTeam: string;
+    homeLogo: string;
+    awayTeam: string;
+    awayLogo: string;
+    homeScore: number;
+    awayScore: number;
+    league: string;
+    matchday: string;
+    date: string;
+  }
+  
+  // Dummy results data
+  const resultsData: ResultsData[] = [
+    {
+      homeTeam: 'FC Barcelona',
+      homeLogo: barcelonaLogo,
+      awayTeam: 'Real Madrid',
+      awayLogo: realmadridLogo,
+      homeScore: 2,
+      awayScore: 1,
+      league: 'La Liga',
+      matchday: 'Matchday 4',
+      date: '31 August 2024',
+    },
+    {
+      homeTeam: 'Atletico Madrid',
+      homeLogo: atleticoLogo,
+      awayTeam: 'Sevilla FC',
+      awayLogo: barcelonaLogo,
+      homeScore: 3,
+      awayScore: 3,
+      league: 'La Liga',
+      matchday: 'Matchday 5',
+      date: '1 September 2024',
+    },
+  ];
 
 const sampleFixtures: Fixture[] = [
   { date: 'SAT 31 AUG', time: '17:00', league: 'LALIGA', matchday: 'Matchday 4', homeTeam: 'FC Barcelona', awayTeam: 'Real Valladolid' },
@@ -23,7 +64,7 @@ const sampleFixtures: Fixture[] = [
 
 const FixturesPage: React.FC = () => {
   const [selectedMonth, setSelectedMonth] = useState<string | null>('AUG');
-  const [activeTab, setActiveTab] = useState<'Schedule' | 'Standings'>('Schedule'); // Tab state
+  const [activeTab, setActiveTab] = useState<'Schedule' | 'Standings' | 'Results'>('Schedule'); // Tab state
   const [filters, setFilters] = useState({
     gender: 'MEN',
     competition: 'ALL',
@@ -64,6 +105,12 @@ const FixturesPage: React.FC = () => {
           onClick={() => setActiveTab('Standings')}
         >
           Standings
+        </button>
+        <button
+          className={`px-6 py-3 font-semibold ${activeTab === 'Standings' ? 'border-b-2 border-yellow-400' : ''}`}
+          onClick={() => setActiveTab('Results')}
+        >
+          Results
         </button>
       </div>
 
@@ -172,7 +219,21 @@ const FixturesPage: React.FC = () => {
             </table>
           </div>
         </div>
-      ) : (
+      ) : activeTab === 'Results' ?  
+      (resultsData.map((result, index) => (
+        <ResultsCard
+          key={index}
+          homeTeam={result.homeTeam}
+          homeLogo={result.homeLogo}
+          awayTeam={result.awayTeam}
+          awayLogo={result.awayLogo}
+          homeScore={result.homeScore}
+          awayScore={result.awayScore}
+          league={result.league}
+          matchday={result.matchday}
+          date={result.date}
+        />
+      ))):(
         // Standings Table Placeholder
         <StandingsTable />
       )}
