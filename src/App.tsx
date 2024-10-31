@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import SingleNewsPage from './pages/SingleNewsPage';
+import NewsPage from './pages/NewsPage';
 
 const App: React.FC = () => {
   return (
@@ -11,6 +13,8 @@ const App: React.FC = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/news/:id" element={<SingleNewsPage />} />
+          <Route path="/news" element={<NewsPage />} />
         </Routes>
         <Footer />
       </div>

@@ -6,7 +6,7 @@ import { CardData } from '../interfaces/cardData';
 interface CardProps extends Omit<CardData, 'id'> {}
 
 const News: React.FC<CardProps> = ({ title, time, image, isVideo, tag }) => (
-  <div className="relative flex flex-col bg-black rounded-lg shadow-lg overflow-hidden w-full max-w-xs">
+  <div className="relative flex flex-col bg-gray-900 rounded-lg shadow-lg overflow-hidden w-full max-w-xs">
     {/* Image Section */}
     <div className="relative h-40">
       <img 
@@ -16,7 +16,7 @@ const News: React.FC<CardProps> = ({ title, time, image, isVideo, tag }) => (
       />
       {/* Video Icon Overlay for Videos */}
       {isVideo && (
-        <div className="absolute bottom-2 left-2 flex items-center space-x-1 bg-opacity-75 bg-black p-1 rounded">
+        <div className="absolute bottom-2 left-2 flex items-center space-x-1 bg-opacity-75 bg-gray-900 p-1 rounded">
           <Play size={16} className="text-yellow-400" />
           <span className="text-xs text-white">{time}</span>
         </div>
