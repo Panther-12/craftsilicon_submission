@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import SingleNewsPage from './pages/SingleNewsPage';
 import NewsPage from './pages/NewsPage';
+import Fixtures from './pages/Fixtures';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/news/:id" element={<SingleNewsPage />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/fixtures" element={<Fixtures />} />
         </Routes>
         <Footer />
       </div>
