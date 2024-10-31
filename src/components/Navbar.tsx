@@ -44,8 +44,14 @@ const Navbar: FC = () => {
           <div className="flex items-center h-full">
             <div className="flex-shrink-0 flex items-center lg:mt-[65%] md:mt-0">
               <span className="ml-2 text-xl font-bold text-center">
-                <img src={logo} alt="logo" id="logo" className="h-8 w-8 lg:h-10 lg:w-10"
+                <Link to="/">
+                  <img 
+                    src={logo} 
+                    alt="logo" 
+                    id="logo" 
+                    className="h-8 w-8 lg:h-10 lg:w-10" 
                   />
+                </Link>
               </span>
             </div>
           </div>
