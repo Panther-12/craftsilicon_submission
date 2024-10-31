@@ -7,6 +7,7 @@ import SingleNewsPage from './pages/SingleNewsPage';
 import NewsPage from './pages/NewsPage';
 import Fixtures from './pages/Fixtures';
 import TeamPage from './pages/TeamPage';
+import PlayerPage from './pages/PlayerPage';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/fixtures" element={<Fixtures />} />
           <Route path="/team" element={<TeamPage/>} />
+          <Route path="/player/:id" element={<PlayerPage />} />
         </Routes>
         <Footer />
       </div>

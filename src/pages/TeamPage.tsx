@@ -41,7 +41,7 @@ const TeamPage: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen p-8">
-      <h1 className="text-2xl font-bold text-center mb-8">FC BARCELONA FIRST TEAM</h1>
+      <h1 className="text-2xl font-bold text-center mb-8 text-yellow-600">FC BARCELONA FIRST TEAM</h1>
 
       {/* Filter Navigation */}
       <div className="flex justify-center space-x-4 mb-8">
