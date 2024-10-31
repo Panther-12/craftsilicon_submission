@@ -1,42 +1,68 @@
 import React from 'react';
-import {
-    FacebookIcon,
-    InstagramIcon,
-    TwitterIcon,
-  } from 'lucide-react';
+import { Facebook, Youtube, X, MessageSquare } from 'lucide-react';
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-black text-yellow-500 py-4">
-    <div className="container mx-auto px-4">
-      <div className="flex justify-between items-center">
-        <div className="text-xl font-bold">Muranga  
-Seal</div>
-        <div className="flex gap-4">
-          <FacebookIcon size={24} />
-          <InstagramIcon size={24} />
-          <TwitterIcon size={24} />
-          {/* <WhatsappIcon size={24} /> */}
-        </div>
+const Footer: React.FC = () => (
+  <footer className="bg-black text-yellow-400 py-8 px-12">
+    {/* New Top Section: Email and Phone */}
+    <div className="flex justify-between items-center text-gray-200 first-line:first-line:bg-opacity-90 mb-7">
+      <span className="font-semibold">MURANGASEALS@GMAIL.COM</span>
+      <span className="font-semibold">+254 790 770982</span>
+    </div>
+
+    {/* Middle Section: Subscribe */}
+    <div className="bg-yellow-500 px-10 py-10 flex flex-col md:flex-row items-center justify-between rounded-lg mb-8">
+      <h3 className="text-2xl font-semibold text-black mb-4 md:mb-0">
+        Register Now So You Don’t Miss Our Games
+      </h3>
+      <div className="flex items-center bg-black rounded-lg p-3 w-3/4 ml-4">
+        <input
+          type="email"
+          placeholder="Enter your Email"
+          className="flex-grow bg-black text-yellow-400 outline-none border-2 border-yellow-400 rounded-lg px-4 py-2 placeholder-yellow-400"
+        />
+        <button className="bg-yellow-500 text-black font-semibold rounded-lg px-6 py-2 ml-2 hover:bg-yellow-600">
+          Subscribe Now
+        </button>
       </div>
-      <div className="mt-4">
-        <h2 className="text-2xl font-bold">Register Now So You Don't Miss Our Games</h2>
-        <div className="flex gap-4 mt-4">
-          <input type="email" className="w-full border border-yellow-500 px-4 py-2 rounded" placeholder="Enter your Email" />
-          <button className="bg-yellow-500 text-black px-4 py-2 rounded">Subscribe Now</button>
-        </div>
+    </div>
+
+    {/* Links and Icons Section */}
+    <div className="flex justify-between items-center border-b border-yellow-400 py-6 px-6 mb-8">
+      {/* Links */}
+      <div className="flex space-x-8 text-sm font-semibold">
+        <a href="#" className="hover:text-yellow-500">Home</a>
+        <a href="#" className="hover:text-yellow-500">About</a>
+        <a href="#" className="hover:text-yellow-500">Events</a>
+        <a href="#" className="hover:text-yellow-500">Blogs</a>
       </div>
-      <nav className="mt-8 flex justify-between">
-        <ul className="flex gap-4">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/blogs">Blogs</a></li>
-        </ul>
-      </nav>
+      
+      {/* Social Media Icons */}
+      <div className="flex space-x-6">
+        <a href="#" className="text-yellow-400 hover:text-yellow-500">
+          <Facebook size={24} />
+        </a>
+        <a href="#" className="text-yellow-400 hover:text-yellow-500">
+          <Youtube size={24} />
+        </a>
+        <a href="#" className="text-yellow-400 hover:text-yellow-500">
+          <X size={24} />
+        </a>
+        <a href="#" className="text-yellow-400 hover:text-yellow-500">
+          <MessageSquare size={24} />
+        </a>
+      </div>
+    </div>
+
+    {/* Bottom Section: Trademark, Name, and Terms */}
+    <div className="flex justify-between items-center text-sm font-semibold text-yellow-400 px-6 py-4">
+      <span>©Murang’a Seal. All rights reserved</span>
+      <span className="text-xl font-bold">Murang’a Seal</span>
+      <div className="flex space-x-4">
+        <a href="#" className="hover:text-yellow-500">Terms of Service</a>
+        <a href="#" className="hover:text-yellow-500">Privacy policy</a>
+      </div>
     </div>
   </footer>
-  );
-}
+);
 
 export default Footer;
